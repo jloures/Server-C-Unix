@@ -1,0 +1,8 @@
+Running suite query
+main.c:253:P:query:test_query_1:0: Passed
+main.c:276:P:query:test_query_2:0: Passed
+main.c:291:P:query:test_query_3:0: Passed
+main.c:306:P:query:test_query_4:0: Passed
+main.c:261:P:query:test_query_5:0: Passed
+Results for all suites run:
+100%: Checks: 5, Failures: 0, Errors: 0

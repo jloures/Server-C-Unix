@@ -1,0 +1,90 @@
+\hypertarget{client_8c}{\section{client.\-c File Reference}
+\label{client_8c}\index{client.\-c@{client.\-c}}
+}
+
+
+This file implements a \char`\"{}very\char`\"{} simple sample client.  
+
+
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}storage.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{client_8c_a24a31f60b063af0e662125ea2427b140}{\#define {\bfseries L\-O\-G\-G\-I\-N\-G}~0}\label{client_8c_a24a31f60b063af0e662125ea2427b140}
+
+\item 
+\hypertarget{client_8c_a0e05fca2f66237f4e7f642d55e0e75b0}{\#define {\bfseries T\-H\-R\-E\-E\-C\-O\-L\-S\-T\-A\-B\-L\-E}~\char`\"{}threecols\char`\"{}}\label{client_8c_a0e05fca2f66237f4e7f642d55e0e75b0}
+
+\item 
+\hypertarget{client_8c_a2b3762449678b5ea80fe48d3bef976cb}{\#define {\bfseries F\-O\-U\-R\-C\-O\-L\-S\-T\-A\-B\-L\-E}~\char`\"{}fourcols\char`\"{}}\label{client_8c_a2b3762449678b5ea80fe48d3bef976cb}
+
+\item 
+\hypertarget{client_8c_acc05bb9d7fe507e2f3197dd2acf5a14c}{\#define {\bfseries S\-I\-X\-C\-O\-L\-S\-T\-A\-B\-L\-E}~\char`\"{}sixcols\char`\"{}}\label{client_8c_acc05bb9d7fe507e2f3197dd2acf5a14c}
+
+\item 
+\hypertarget{client_8c_af709a8c6c00929607ff2bb1f35e14754}{\#define {\bfseries K\-E\-Y1}~\char`\"{}somekey1\char`\"{}}\label{client_8c_af709a8c6c00929607ff2bb1f35e14754}
+
+\item 
+\hypertarget{client_8c_a28139a703782c6706c0c53bda00572d3}{\#define {\bfseries K\-E\-Y2}~\char`\"{}somekey2\char`\"{}}\label{client_8c_a28139a703782c6706c0c53bda00572d3}
+
+\item 
+\hypertarget{client_8c_a110ce38bd8be5f986c9032a3535156f7}{\#define {\bfseries K\-E\-Y3}~\char`\"{}somekey3\char`\"{}}\label{client_8c_a110ce38bd8be5f986c9032a3535156f7}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{client_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Start a client to interact with the storage server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+F\-I\-L\-E $\ast$ \hyperlink{client_8c_a92b3b3d99a7bbcf4a3ca5ba45e1b1075}{file\-\_\-ptr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements a \char`\"{}very\char`\"{} simple sample client. The client connects to the server, running at S\-E\-R\-V\-E\-R\-H\-O\-S\-T\-:S\-E\-R\-V\-E\-R\-P\-O\-R\-T and performs a number of storage\-\_\-$\ast$ operations. If there are errors, the client exists. 
+
+Definition in file \hyperlink{client_8c_source}{client.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{client_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{client.\-c@{client.\-c}!main@{main}}
+\index{main@{main}!client.c@{client.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{client_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Start a client to interact with the storage server. 
+
+If connect is successful, the client performs a storage\-\_\-set/get() on T\-A\-B\-L\-E and K\-E\-Y and outputs the results on stdout. Finally, it exists after disconnecting from the server. 
+
+Definition at line 41 of file client.\-c.
+
+
+
+References M\-A\-X\-\_\-\-K\-E\-Y\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-R\-E\-C\-O\-R\-D\-S\-\_\-\-P\-E\-R\-\_\-\-T\-A\-B\-L\-E, and storage\-\_\-record\-::value.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{client_8c_a92b3b3d99a7bbcf4a3ca5ba45e1b1075}{\index{client.\-c@{client.\-c}!file\-\_\-ptr@{file\-\_\-ptr}}
+\index{file\-\_\-ptr@{file\-\_\-ptr}!client.c@{client.\-c}}
+\subsubsection[{file\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ file\-\_\-ptr}}\label{client_8c_a92b3b3d99a7bbcf4a3ca5ba45e1b1075}
+added struct Record\-Element to store key, data, and pointer to next Record\-Element 
+
+Definition at line 30 of file client.\-c.
+

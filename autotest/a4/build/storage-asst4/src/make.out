@@ -1,0 +1,78 @@
+cc -g -Wall -c storage.c -o storage.o
+storage.c: In function 'storage_connect':
+storage.c:85:2: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:144:9: warning: cast to pointer from integer of different size [-Wint-to-pointer-cast]
+storage.c: In function 'storage_auth':
+storage.c:165:2: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:184:13: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+storage.c: In function 'storage_get':
+storage.c:242:2: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:248:2: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:273:13: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+storage.c: In function 'storage_set':
+storage.c:334:2: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:340:2: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:358:13: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+storage.c:376:3: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uintptr_t' [-Wformat]
+storage.c:376:3: warning: format '%d' expects argument of type 'int', but argument 4 has type 'uintptr_t' [-Wformat]
+storage.c: In function 'storage_query':
+storage.c:420:3: warning: passing argument 3 of 'client_parser' discards 'const' qualifier from pointer target type [enabled by default]
+storage.c:30:6: note: expected 'char *' but argument is of type 'const char *'
+storage.c:449:14: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+storage.c:489:4: warning: embedded '\0' in format [-Wformat-contains-nul]
+storage.c:489:4: warning: embedded '\0' in format [-Wformat-contains-nul]
+storage.c:499:5: warning: statement with no effect [-Wunused-value]
+storage.c: In function 'storage_disconnect':
+storage.c:527:13: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+cc -g -Wall -c utils.c -o utils.o
+utils.c: In function 'find_record':
+utils.c:29:9: warning: unused variable 'j' [-Wunused-variable]
+utils.c: In function 'find_table':
+utils.c:133:50: warning: comparison between pointer and integer [enabled by default]
+utils.c: In function 'delete_record':
+utils.c:183:9: warning: unused variable 'j' [-Wunused-variable]
+utils.c: In function 'create_record':
+utils.c:230:90: warning: comparison between pointer and integer [enabled by default]
+utils.c:237:75: warning: comparison between pointer and integer [enabled by default]
+utils.c:289:90: warning: comparison between pointer and integer [enabled by default]
+utils.c: In function 'insert_key':
+utils.c:340:7: warning: passing argument 1 of 'find_record' discards 'const' qualifier from pointer target type [enabled by default]
+utils.c:24:16: note: expected 'char *' but argument is of type 'const char *'
+utils.c:340:7: warning: passing argument 2 of 'find_record' discards 'const' qualifier from pointer target type [enabled by default]
+utils.c:24:16: note: expected 'char *' but argument is of type 'const char *'
+utils.c:343:11: warning: passing argument 3 of 'create_record' discards 'const' qualifier from pointer target type [enabled by default]
+utils.c:224:5: note: expected 'char *' but argument is of type 'const char *'
+utils.c:343:11: warning: passing argument 4 of 'create_record' discards 'const' qualifier from pointer target type [enabled by default]
+utils.c:224:5: note: expected 'char *' but argument is of type 'const char *'
+utils.c:346:10: warning: passing argument 3 of 'create_record' discards 'const' qualifier from pointer target type [enabled by default]
+utils.c:224:5: note: expected 'char *' but argument is of type 'const char *'
+utils.c:346:10: warning: passing argument 4 of 'create_record' discards 'const' qualifier from pointer target type [enabled by default]
+utils.c:224:5: note: expected 'char *' but argument is of type 'const char *'
+utils.c:325:10: warning: unused variable 'j' [-Wunused-variable]
+utils.c:321:10: warning: unused variable 'hash_key' [-Wunused-variable]
+utils.c: In function 'process_config_line':
+utils.c:641:30: warning: comparison between pointer and integer [enabled by default]
+utils.c:678:27: warning: comparison between pointer and integer [enabled by default]
+utils.c: In function 'read_config':
+utils.c:1157:29: warning: comparison between pointer and integer [enabled by default]
+utils.c:1157:123: warning: comparison between pointer and integer [enabled by default]
+utils.c:1157:153: warning: comparison between pointer and integer [enabled by default]
+ar rcs libstorage.a storage.o utils.o
+cc -g -Wall -c server.c -o server.o
+server.c: In function 'handle_command':
+server.c:445:1: warning: control reaches end of non-void function [-Wreturn-type]
+cc -g -Wall -lcrypt -lpthread server.o utils.o -o server
+cc -g -Wall -c client.c -o client.o
+client.c: In function 'main':
+client.c:86:6: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+cc -g -Wall -lcrypt -lpthread client.o libstorage.a -o client
+cc -g -Wall -c encrypt_passwd.c -o encrypt_passwd.o
+cc -g -Wall -lcrypt -lpthread encrypt_passwd.o utils.o -o encrypt_passwd
+make: `server' is up to date.
+make: `libstorage.a' is up to date.

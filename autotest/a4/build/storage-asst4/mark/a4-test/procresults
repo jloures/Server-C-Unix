@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Process the results of the test suites.
+
+# Collect the tests that pass and fail
+grep -E '^main.c:[0-9]+:[P]:'  results.log > results-pass.log
+grep -E '^main.c:[0-9]+:[^P]:' results.log > results-nopass.log
+
+
+# Summarize how many total tests pass.
+echo "Total: `cat results-pass.log |wc -l` tests pass" > results-summary.log
+
+# Summarize how many of each set of tests pass.
+testsets=$(awk -F : '/^main.c/{print $4}' results.log |uniq)
+for testset in $testsets; do
+	echo `grep -E "^main.c:[0-9]+:[P]:$testset:" results.log |wc -l` tests pass in $testset >> results-summary.log
+done
+
+# Construct csv of passing test counts.
+summary=$(grep -Ev "^Total: |^Summary" results-summary.log | awk '{print $1}' | xargs | tr " " ",")
+echo "Summary (comma separated): $summary," >> results-summary.log
+
+# Construct tsv of passing test counts.
+summary=$(grep -Ev "^Total: |^Summary" results-summary.log | awk '{print $1}' | xargs | tr " " "\t")
+echo "Summary (tab separated): $summary" >> results-summary.log
+

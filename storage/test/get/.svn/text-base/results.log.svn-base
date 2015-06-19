@@ -1,0 +1,8 @@
+Running suite get
+main.c:261:F:setget:test_get_1:0: Error setting a key/value pair.
+main.c:293:F:setget:test_get_2:0: Error setting a key/value pair.
+main.c:325:F:setget:test_get_3:0: Error setting a key/value pair.
+main.c:357:F:setget:test_get_4:0: Error setting a key/value pair.
+main.c:389:F:setget:test_get_5:0: Error setting a key/value pair.
+Results for all suites run:
+0%: Checks: 5, Failures: 5, Errors: 0

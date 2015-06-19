@@ -1,0 +1,80 @@
+\contentsline {chapter}{\numberline {1}Class Index}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Class List}{1}{section.1.1}
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Documentation}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Thread\discretionary {-}{}{}Info Struct Reference}{5}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Detailed Description}{5}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}column\discretionary {-}{}{}\_\discretionary {-}{}{}struct Struct Reference}{5}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Detailed Description}{5}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}config\discretionary {-}{}{}\_\discretionary {-}{}{}params Struct Reference}{6}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Detailed Description}{6}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.4}query\discretionary {-}{}{}\_\discretionary {-}{}{}params Struct Reference}{6}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Detailed Description}{7}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}record\discretionary {-}{}{}\_\discretionary {-}{}{}struct Struct Reference}{7}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Detailed Description}{7}{subsection.3.5.1}
+\contentsline {section}{\numberline {3.6}set\discretionary {-}{}{}\_\discretionary {-}{}{}params Struct Reference}{7}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Detailed Description}{7}{subsection.3.6.1}
+\contentsline {section}{\numberline {3.7}storage\discretionary {-}{}{}\_\discretionary {-}{}{}record Struct Reference}{8}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Detailed Description}{8}{subsection.3.7.1}
+\contentsline {section}{\numberline {3.8}table Struct Reference}{8}{section.3.8}
+\contentsline {subsection}{\numberline {3.8.1}Detailed Description}{8}{subsection.3.8.1}
+\contentsline {section}{\numberline {3.9}table\discretionary {-}{}{}\_\discretionary {-}{}{}list Struct Reference}{8}{section.3.9}
+\contentsline {subsection}{\numberline {3.9.1}Detailed Description}{9}{subsection.3.9.1}
+\contentsline {section}{\numberline {3.10}table\discretionary {-}{}{}\_\discretionary {-}{}{}params Struct Reference}{9}{section.3.10}
+\contentsline {subsection}{\numberline {3.10.1}Detailed Description}{9}{subsection.3.10.1}
+\contentsline {chapter}{\numberline {4}File Documentation}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}client.\discretionary {-}{}{}c File Reference}{11}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{12}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{12}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}main}{12}{subsubsection.4.1.2.1}
+\contentsline {subsection}{\numberline {4.1.3}Variable Documentation}{12}{subsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.3.1}file\discretionary {-}{}{}\_\discretionary {-}{}{}ptr}{12}{subsubsection.4.1.3.1}
+\contentsline {section}{\numberline {4.2}encrypt\discretionary {-}{}{}\_\discretionary {-}{}{}passwd.\discretionary {-}{}{}c File Reference}{12}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{12}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}server.\discretionary {-}{}{}c File Reference}{13}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{14}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{14}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}get\discretionary {-}{}{}Thread\discretionary {-}{}{}Info}{14}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}handle\discretionary {-}{}{}\_\discretionary {-}{}{}command}{14}{subsubsection.4.3.2.2}
+\contentsline {subsubsection}{\numberline {4.3.2.3}main}{15}{subsubsection.4.3.2.3}
+\contentsline {subsubsection}{\numberline {4.3.2.4}release\discretionary {-}{}{}Thread}{15}{subsubsection.4.3.2.4}
+\contentsline {section}{\numberline {4.4}storage.\discretionary {-}{}{}h File Reference}{15}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{17}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Function Documentation}{17}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}storage\discretionary {-}{}{}\_\discretionary {-}{}{}auth}{17}{subsubsection.4.4.2.1}
+\contentsline {subsubsection}{\numberline {4.4.2.2}storage\discretionary {-}{}{}\_\discretionary {-}{}{}connect}{17}{subsubsection.4.4.2.2}
+\contentsline {subsubsection}{\numberline {4.4.2.3}storage\discretionary {-}{}{}\_\discretionary {-}{}{}disconnect}{18}{subsubsection.4.4.2.3}
+\contentsline {subsubsection}{\numberline {4.4.2.4}storage\discretionary {-}{}{}\_\discretionary {-}{}{}get}{18}{subsubsection.4.4.2.4}
+\contentsline {subsubsection}{\numberline {4.4.2.5}storage\discretionary {-}{}{}\_\discretionary {-}{}{}query}{19}{subsubsection.4.4.2.5}
+\contentsline {subsubsection}{\numberline {4.4.2.6}storage\discretionary {-}{}{}\_\discretionary {-}{}{}set}{20}{subsubsection.4.4.2.6}
+\contentsline {section}{\numberline {4.5}utils.\discretionary {-}{}{}c File Reference}{21}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{22}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{22}{subsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.2.1}generate\discretionary {-}{}{}\_\discretionary {-}{}{}encrypted\discretionary {-}{}{}\_\discretionary {-}{}{}password}{22}{subsubsection.4.5.2.1}
+\contentsline {subsubsection}{\numberline {4.5.2.2}is\discretionary {-}{}{}\_\discretionary {-}{}{}alpha}{22}{subsubsection.4.5.2.2}
+\contentsline {subsubsection}{\numberline {4.5.2.3}keymaker}{22}{subsubsection.4.5.2.3}
+\contentsline {subsubsection}{\numberline {4.5.2.4}logger}{23}{subsubsection.4.5.2.4}
+\contentsline {subsubsection}{\numberline {4.5.2.5}process\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}line}{23}{subsubsection.4.5.2.5}
+\contentsline {subsubsection}{\numberline {4.5.2.6}query\discretionary {-}{}{}\_\discretionary {-}{}{}parsing}{24}{subsubsection.4.5.2.6}
+\contentsline {subsubsection}{\numberline {4.5.2.7}read\discretionary {-}{}{}\_\discretionary {-}{}{}config}{24}{subsubsection.4.5.2.7}
+\contentsline {subsubsection}{\numberline {4.5.2.8}recvline}{25}{subsubsection.4.5.2.8}
+\contentsline {subsubsection}{\numberline {4.5.2.9}sendall}{25}{subsubsection.4.5.2.9}
+\contentsline {subsubsection}{\numberline {4.5.2.10}set\discretionary {-}{}{}\_\discretionary {-}{}{}parsing}{25}{subsubsection.4.5.2.10}
+\contentsline {section}{\numberline {4.6}utils.\discretionary {-}{}{}h File Reference}{26}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{28}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Macro Definition Documentation}{28}{subsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.2.1}D\discretionary {-}{}{}B\discretionary {-}{}{}G}{28}{subsubsection.4.6.2.1}
+\contentsline {subsubsection}{\numberline {4.6.2.2}L\discretionary {-}{}{}O\discretionary {-}{}{}G}{28}{subsubsection.4.6.2.2}
+\contentsline {subsection}{\numberline {4.6.3}Function Documentation}{28}{subsection.4.6.3}
+\contentsline {subsubsection}{\numberline {4.6.3.1}generate\discretionary {-}{}{}\_\discretionary {-}{}{}encrypted\discretionary {-}{}{}\_\discretionary {-}{}{}password}{28}{subsubsection.4.6.3.1}
+\contentsline {subsubsection}{\numberline {4.6.3.2}is\discretionary {-}{}{}\_\discretionary {-}{}{}alpha}{28}{subsubsection.4.6.3.2}
+\contentsline {subsubsection}{\numberline {4.6.3.3}keymaker}{29}{subsubsection.4.6.3.3}
+\contentsline {subsubsection}{\numberline {4.6.3.4}logger}{29}{subsubsection.4.6.3.4}
+\contentsline {subsubsection}{\numberline {4.6.3.5}query\discretionary {-}{}{}\_\discretionary {-}{}{}parsing}{29}{subsubsection.4.6.3.5}
+\contentsline {subsubsection}{\numberline {4.6.3.6}read\discretionary {-}{}{}\_\discretionary {-}{}{}config}{30}{subsubsection.4.6.3.6}
+\contentsline {subsubsection}{\numberline {4.6.3.7}recvline}{30}{subsubsection.4.6.3.7}
+\contentsline {subsubsection}{\numberline {4.6.3.8}sendall}{31}{subsubsection.4.6.3.8}
+\contentsline {subsubsection}{\numberline {4.6.3.9}set\discretionary {-}{}{}\_\discretionary {-}{}{}parsing}{32}{subsubsection.4.6.3.9}
+\contentsline {subsection}{\numberline {4.6.4}Variable Documentation}{32}{subsection.4.6.4}
+\contentsline {subsubsection}{\numberline {4.6.4.1}file\discretionary {-}{}{}\_\discretionary {-}{}{}ptr}{32}{subsubsection.4.6.4.1}

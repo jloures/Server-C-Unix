@@ -1,0 +1,194 @@
+\hypertarget{server_8c}{\section{server.\-c File Reference}
+\label{server_8c}\index{server.\-c@{server.\-c}}
+}
+
+
+This file implements the storage server.  
+
+
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\-h$>$}\\*
+{\ttfamily \#include $<$netdb.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$assert.\-h$>$}\\*
+{\ttfamily \#include $<$signal.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$pthread.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__ThreadInfo}{\-\_\-\-Thread\-Info}
+\begin{DoxyCompactList}\small\item\em Structure storing information for each thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{server_8c_a24a31f60b063af0e662125ea2427b140}{\#define {\bfseries L\-O\-G\-G\-I\-N\-G}~0}\label{server_8c_a24a31f60b063af0e662125ea2427b140}
+
+\item 
+\hypertarget{server_8c_a36b090ddf192f97d9fecf8ff5a98996e}{\#define \hyperlink{server_8c_a36b090ddf192f97d9fecf8ff5a98996e}{M\-A\-X\-\_\-\-L\-I\-S\-T\-E\-N\-Q\-U\-E\-U\-E\-L\-E\-N}~20}\label{server_8c_a36b090ddf192f97d9fecf8ff5a98996e}
+
+\begin{DoxyCompactList}\small\item\em The maximum number of queued connections. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{server_8c_ac137d355fd8e06ed8404b3ddec841276}{typedef struct \hyperlink{struct__ThreadInfo}{\-\_\-\-Thread\-Info} $\ast$ {\bfseries Thread\-Info}}\label{server_8c_ac137d355fd8e06ed8404b3ddec841276}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct__ThreadInfo}{Thread\-Info} \hyperlink{server_8c_a181133ba21039a493023c24c592ed983}{get\-Thread\-Info} (void)
+\begin{DoxyCompactList}\small\item\em Function accessing threadinfo struct. \end{DoxyCompactList}\item 
+void \hyperlink{server_8c_a09a7cfb58a46a32526c8b965dc98a30c}{release\-Thread} (\hyperlink{struct__ThreadInfo}{Thread\-Info} me)
+\begin{DoxyCompactList}\small\item\em Function called when thread is about to finish -- unless it is called, the Thread\-Info assigned to it is lost. \end{DoxyCompactList}\item 
+int \hyperlink{server_8c_aa561ae8f19a32380b320879d6fa17198}{handle\-\_\-command} (F\-I\-L\-E $\ast$file, int sock, char $\ast$cmd, \hyperlink{structtable__list}{table\-\_\-list} $\ast$List, struct \hyperlink{structconfig__params}{config\-\_\-params} params, struct \hyperlink{structset__params}{set\-\_\-params} sparams, struct \hyperlink{structquery__params}{query\-\_\-params} qparams)
+\begin{DoxyCompactList}\small\item\em Process a command from the client. \end{DoxyCompactList}\item 
+int \hyperlink{server_8c_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Start the storage server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{server_8c_a59ea1e9c8dc15d3b124b7953287c6f30}{\hyperlink{struct__ThreadInfo}{Thread\-Info} {\bfseries runtime\-Threads} \mbox{[}\hyperlink{storage_8h_a053b7859476cc9867ec62c49e68d3fa1}{M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-S}\mbox{]}}\label{server_8c_a59ea1e9c8dc15d3b124b7953287c6f30}
+
+\item 
+\hypertarget{server_8c_ad47b6e0ad77b401df7270b256c87d87f}{unsigned int {\bfseries bot\-R\-T} = 0}\label{server_8c_ad47b6e0ad77b401df7270b256c87d87f}
+
+\item 
+\hypertarget{server_8c_ab459476b2429f60bfda74517c67785fa}{unsigned int {\bfseries top\-R\-T} = 0}\label{server_8c_ab459476b2429f60bfda74517c67785fa}
+
+\item 
+\hypertarget{server_8c_a126e727db49ab9f4bc39a5f351a4fe60}{pthread\-\_\-mutex\-\_\-t {\bfseries condition\-Mutex} = P\-T\-H\-R\-E\-A\-D\-\_\-\-M\-U\-T\-E\-X\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{server_8c_a126e727db49ab9f4bc39a5f351a4fe60}
+
+\item 
+\hypertarget{server_8c_acb58cbe63fc968208567fcf1f05c553f}{pthread\-\_\-mutex\-\_\-t {\bfseries handle\-\_\-cmd\-\_\-lock} = P\-T\-H\-R\-E\-A\-D\-\_\-\-M\-U\-T\-E\-X\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{server_8c_acb58cbe63fc968208567fcf1f05c553f}
+
+\item 
+\hypertarget{server_8c_a31b129406a8433b0e2ac8caebfdc08cd}{pthread\-\_\-cond\-\_\-t {\bfseries condition\-Cond} = P\-T\-H\-R\-E\-A\-D\-\_\-\-C\-O\-N\-D\-\_\-\-I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-R}\label{server_8c_a31b129406a8433b0e2ac8caebfdc08cd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements the storage server. The storage server should be named \char`\"{}server\char`\"{} and should take a single command line argument that refers to the configuration file.
+
+The storage server should be able to communicate with the client library functions declared in \hyperlink{storage_8h}{storage.\-h} and implemented in \hyperlink{storage_8c_source}{storage.\-c}. 
+
+Definition in file \hyperlink{server_8c_source}{server.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{server_8c_a181133ba21039a493023c24c592ed983}{\index{server.\-c@{server.\-c}!get\-Thread\-Info@{get\-Thread\-Info}}
+\index{get\-Thread\-Info@{get\-Thread\-Info}!server.c@{server.\-c}}
+\subsubsection[{get\-Thread\-Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Thread\-Info} get\-Thread\-Info (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{server_8c_a181133ba21039a493023c24c592ed983}
+
+
+Function accessing threadinfo struct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & There're no parameter inputs  Returns a pointer to the threadinfo struct \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 56 of file server.\-c.
+
+
+
+References M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-S.
+
+\hypertarget{server_8c_aa561ae8f19a32380b320879d6fa17198}{\index{server.\-c@{server.\-c}!handle\-\_\-command@{handle\-\_\-command}}
+\index{handle\-\_\-command@{handle\-\_\-command}!server.c@{server.\-c}}
+\subsubsection[{handle\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}int handle\-\_\-command (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{file, }
+\item[{int}]{sock, }
+\item[{char $\ast$}]{cmd, }
+\item[{{\bf table\-\_\-list} $\ast$}]{List, }
+\item[{struct {\bf config\-\_\-params}}]{params, }
+\item[{struct {\bf set\-\_\-params}}]{sparams, }
+\item[{struct {\bf query\-\_\-params}}]{qparams}
+\end{DoxyParamCaption}
+)}}\label{server_8c_aa561ae8f19a32380b320879d6fa17198}
+
+
+Process a command from the client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & The socket connected to the client. \\
+\hline
+{\em cmd} & The command received from the client. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, -\/1 otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 118 of file server.\-c.
+
+
+
+References E\-R\-R\-\_\-\-A\-U\-T\-H\-E\-N\-T\-I\-C\-A\-T\-I\-O\-N\-\_\-\-F\-A\-I\-L\-E\-D, E\-R\-R\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-A\-R\-A\-M, E\-R\-R\-\_\-\-K\-E\-Y\-\_\-\-N\-O\-T\-\_\-\-F\-O\-U\-N\-D, E\-R\-R\-\_\-\-T\-A\-B\-L\-E\-\_\-\-N\-O\-T\-\_\-\-F\-O\-U\-N\-D, E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N, logger(), config\-\_\-params\-::pass\-\_\-, query\-\_\-parsing(), sendall(), set\-\_\-parsing(), and config\-\_\-params\-::username.
+
+
+
+Referenced by main().
+
+\hypertarget{server_8c_a0ddf1224851353fc92bfbff6f499fa97}{\index{server.\-c@{server.\-c}!main@{main}}
+\index{main@{main}!server.c@{server.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{server_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Start the storage server. 
+
+This is the main entry point for the storage server. It reads the configuration file, starts listening on a port, and proccesses commands from clients. 
+
+Definition at line 394 of file server.\-c.
+
+
+
+References config\-\_\-params\-::concurrency, handle\-\_\-command(), logger(), M\-A\-X\-\_\-\-C\-M\-D\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-L\-I\-S\-T\-E\-N\-Q\-U\-E\-U\-E\-L\-E\-N, read\-\_\-config(), recvline(), config\-\_\-params\-::server\-\_\-host, and config\-\_\-params\-::server\-\_\-port.
+
+\hypertarget{server_8c_a09a7cfb58a46a32526c8b965dc98a30c}{\index{server.\-c@{server.\-c}!release\-Thread@{release\-Thread}}
+\index{release\-Thread@{release\-Thread}!server.c@{server.\-c}}
+\subsubsection[{release\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}void release\-Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf Thread\-Info}}]{me}
+\end{DoxyParamCaption}
+)}}\label{server_8c_a09a7cfb58a46a32526c8b965dc98a30c}
+
+
+Function called when thread is about to finish -- unless it is called, the Thread\-Info assigned to it is lost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Threadinfo} & the pointer to the threadinfo struct is passed in  void There's no return \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file server.\-c.
+
+
+
+References M\-A\-X\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N\-S.
+

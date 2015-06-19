@@ -1,0 +1,39 @@
+# This makefile will be included by the makesfiles in each test directory.
+# It defines certain common paths and targets.
+
+SRCDIR = ../../src
+CLIENTLIB = libstorage.a
+SERVEREXEC = server
+
+# Compile flags.
+CFLAGS = -g -Wall
+LDFLAGS = -g -Wall
+
+KEYSDIR = keys
+
+# Pick a random port between 5000 and 7000
+RANDPORT := $(shell /bin/bash -c "expr \( $$RANDOM \% 2000 \) \+ 5000")
+
+default: build
+
+# Some initialization tasks before we can run the test.
+init: $(SERVEREXEC)
+
+$(SERVEREXEC): $(SRCDIR)/$(SERVEREXEC)
+	ln -sf $(SRCDIR)/$(SERVEREXEC)
+
+$(SRCDIR)/$(SERVEREXEC):
+	cd $(dir $@) && $(MAKE) $(SERVEREXEC)
+
+$(SRCDIR)/$(CLIENTLIB):
+	cd $(dir $@) && $(MAKE) $(CLIENTLIB)
+
+# Creates a new pair of public/private keys and stores them in keys/              
+createkeys:
+	mkdir -p $(KEYSDIR)
+	openssl genrsa -out $(KEYSDIR)/private.pem 1024
+	openssl rsa -in $(KEYSDIR)/private.pem \
+        -out $(KEYSDIR)/public.pem -outform PEM -pubout
+               
+.PHONY: default init build
+

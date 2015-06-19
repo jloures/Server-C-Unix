@@ -1,0 +1,441 @@
+\hypertarget{utils_8c}{\section{utils.\-c File Reference}
+\label{utils_8c}\index{utils.\-c@{utils.\-c}}
+}
+
+
+This file implements various utility functions that are can be used by the storage server and client library.  
+
+
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utils.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}storage.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{utils_8c_a1c3452bf1e460e99c104772c3b3147e9}{\hyperlink{structrecord__struct}{record\-\_\-struct} $\ast$ {\bfseries find\-\_\-record} (char $\ast$\hyperlink{structtable}{table}, char $\ast$key, \hyperlink{structtable__list}{table\-\_\-list} $\ast$list)}\label{utils_8c_a1c3452bf1e460e99c104772c3b3147e9}
+
+\item 
+\hypertarget{utils_8c_a66390af3692addd803018ef1d9a5f0fc}{bool {\bfseries is\-\_\-number} (char $\ast$value)}\label{utils_8c_a66390af3692addd803018ef1d9a5f0fc}
+
+\item 
+int \hyperlink{utils_8c_af554c00c947644fa641c4104c326ef54}{keymaker} (const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em This is a function to generate a key from a string. \end{DoxyCompactList}\item 
+\hypertarget{utils_8c_a7c57d5536ee8d95d13ee22dc0e3ab327}{bool {\bfseries find\-\_\-table} (char $\ast$\hyperlink{structtable}{table}, \hyperlink{structtable__list}{table\-\_\-list} $\ast$table\-\_\-ptr)}\label{utils_8c_a7c57d5536ee8d95d13ee22dc0e3ab327}
+
+\item 
+\hypertarget{utils_8c_a203bd832fee5b48f1c2283d7beea5e3c}{int {\bfseries record\-\_\-get} (char $\ast$\hyperlink{structtable}{table}, char $\ast$key, \hyperlink{structtable__list}{table\-\_\-list} $\ast$list, char $\ast$append, int $\ast$metadata\-\_\-ptr)}\label{utils_8c_a203bd832fee5b48f1c2283d7beea5e3c}
+
+\item 
+\hypertarget{utils_8c_a342f9fcb21e506c59a4156ffc41c7a2c}{int {\bfseries delete\-\_\-record} (\hyperlink{structtable__list}{table\-\_\-list} $\ast$list, char $\ast$\hyperlink{structtable}{table}, char $\ast$key)}\label{utils_8c_a342f9fcb21e506c59a4156ffc41c7a2c}
+
+\item 
+\hypertarget{utils_8c_af638fe1ff84ce47a15d7d6920fd2a1df}{int {\bfseries create\-\_\-record} (int option, int i, char $\ast$key, char $\ast$value, \hyperlink{structtable__list}{table\-\_\-list} $\ast$List, \hyperlink{structconfig__params}{config\-\_\-params} params, int metadata)}\label{utils_8c_af638fe1ff84ce47a15d7d6920fd2a1df}
+
+\item 
+\hypertarget{utils_8c_ad8e44b25869928d7cc09d77a4d78ad19}{int {\bfseries insert\-\_\-key} (const char $\ast$\hyperlink{structtable}{table}, const char $\ast$key, const char $\ast$value, \hyperlink{structtable__list}{table\-\_\-list} $\ast$table\-\_\-ptr, const \hyperlink{structconfig__params}{config\-\_\-params} params, int metadata)}\label{utils_8c_ad8e44b25869928d7cc09d77a4d78ad19}
+
+\item 
+\hypertarget{utils_8c_af38f7468339dd92d75ef9d00b2aa3772}{int {\bfseries insert\-\_\-table} (\hyperlink{structconfig__params}{config\-\_\-params} params, \hyperlink{structtable__list}{table\-\_\-list} $\ast$table\-\_\-ptr)}\label{utils_8c_af38f7468339dd92d75ef9d00b2aa3772}
+
+\item 
+\hypertarget{utils_8c_a42caf34b1dd0f69ba6348539a91f6254}{int {\bfseries record\-\_\-query} (char $\ast$table\-Name, char $\ast$predicates, int max\-\_\-keys, char $\ast$keys\-\_\-found, \hyperlink{structtable__list}{table\-\_\-list} $\ast$list)}\label{utils_8c_a42caf34b1dd0f69ba6348539a91f6254}
+
+\item 
+bool \hyperlink{utils_8c_aa9ff8432fde811ee3c20bd5c2e9c549e}{is\-\_\-alpha} (char str\-\_\-ptr)
+\begin{DoxyCompactList}\small\item\em Function that determines whether a character is alphanumeric character or not by using A\-S\-C\-I\-I values. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8c_a73c4a410d877b6a9358c547786f2102c}{sendall} (const int sock, const char $\ast$buf, const size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em Keep sending the contents of the buffer until complete. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8c_ab126c8228ad72abbaed5f282709446ab}{recvline} (const int sock, char $\ast$buf, const size\-\_\-t buflen)
+\begin{DoxyCompactList}\small\item\em Reads the stream one byte at a time. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8c_a2459e03c24825dd78defd1023487af3e}{process\-\_\-config\-\_\-line} (char $\ast$line, struct \hyperlink{structconfig__params}{config\-\_\-params} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Read and load configuration parameters. \end{DoxyCompactList}\item 
+int \hyperlink{utils_8c_ae885a5871d260ab51ce6a9156f41f07e}{read\-\_\-config} (const char $\ast$config\-\_\-file, struct \hyperlink{structconfig__params}{config\-\_\-params} $\ast$params)
+\begin{DoxyCompactList}\small\item\em Read and load configuration parameters. \end{DoxyCompactList}\item 
+void \hyperlink{utils_8c_a9e4d8cb085fc7d5c9093ee102fa886d1}{logger} (F\-I\-L\-E $\ast$file, char $\ast$message)
+\begin{DoxyCompactList}\small\item\em Generates a log message. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{utils_8c_aa26d27a9072e93c052cb0c7fca7909f7}{generate\-\_\-encrypted\-\_\-password} (const char $\ast$passwd, const char $\ast$salt)
+\begin{DoxyCompactList}\small\item\em Generates an encrypted password string using salt C\-R\-Y\-P\-T\-\_\-\-S\-A\-L\-T. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{utils_8c_ae72767aec5408fd1ffb7de737c970adb}{query\-\_\-parsing} (char $\ast$unparsed\-\_\-, struct \hyperlink{structquery__params}{query\-\_\-params} $\ast$qparams)
+\begin{DoxyCompactList}\small\item\em This is a function that parses the query command from client side to be used in server side. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{utils_8c_a5d19afa9c6e8c64f2bf0e0c61e4e5e34}{set\-\_\-parsing} (char $\ast$unparsed\-\_\-, struct \hyperlink{structset__params}{set\-\_\-params} $\ast$sparams)
+\begin{DoxyCompactList}\small\item\em This is a function that parses the set command from client side to be used in server side. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements various utility functions that are can be used by the storage server and client library. 
+
+Definition in file \hyperlink{utils_8c_source}{utils.\-c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{utils_8c_aa26d27a9072e93c052cb0c7fca7909f7}{\index{utils.\-c@{utils.\-c}!generate\-\_\-encrypted\-\_\-password@{generate\-\_\-encrypted\-\_\-password}}
+\index{generate\-\_\-encrypted\-\_\-password@{generate\-\_\-encrypted\-\_\-password}!utils.c@{utils.\-c}}
+\subsubsection[{generate\-\_\-encrypted\-\_\-password}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ generate\-\_\-encrypted\-\_\-password (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{passwd, }
+\item[{const char $\ast$}]{salt}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_aa26d27a9072e93c052cb0c7fca7909f7}
+
+
+Generates an encrypted password string using salt C\-R\-Y\-P\-T\-\_\-\-S\-A\-L\-T. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passwd} & Password before encryption. \\
+\hline
+{\em salt} & Salt used to encrypt the password. If N\-U\-L\-L default value D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-R\-Y\-P\-T\-\_\-\-S\-A\-L\-T is used. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns encrypted password. 
+\end{DoxyReturn}
+
+
+Definition at line 1223 of file utils.\-c.
+
+
+
+References D\-E\-F\-A\-U\-L\-T\-\_\-\-C\-R\-Y\-P\-T\-\_\-\-S\-A\-L\-T.
+
+
+
+Referenced by storage\-\_\-auth().
+
+\hypertarget{utils_8c_aa9ff8432fde811ee3c20bd5c2e9c549e}{\index{utils.\-c@{utils.\-c}!is\-\_\-alpha@{is\-\_\-alpha}}
+\index{is\-\_\-alpha@{is\-\_\-alpha}!utils.c@{utils.\-c}}
+\subsubsection[{is\-\_\-alpha}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-alpha (
+\begin{DoxyParamCaption}
+\item[{char}]{str\-\_\-ptr}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_aa9ff8432fde811ee3c20bd5c2e9c549e}
+
+
+Function that determines whether a character is alphanumeric character or not by using A\-S\-C\-I\-I values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str\-\_\-ptr} & The character that's being evaluated.  If the character is alphanumeric, return true. If not, return false. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 546 of file utils.\-c.
+
+\hypertarget{utils_8c_af554c00c947644fa641c4104c326ef54}{\index{utils.\-c@{utils.\-c}!keymaker@{keymaker}}
+\index{keymaker@{keymaker}!utils.c@{utils.\-c}}
+\subsubsection[{keymaker}]{\setlength{\rightskip}{0pt plus 5cm}int keymaker (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{key}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_af554c00c947644fa641c4104c326ef54}
+
+
+This is a function to generate a key from a string. 
+
+hashing function
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & String to be hashed into an integer key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the integer key 
+\end{DoxyReturn}
+Address to the record
+
+Get a certain number from multiplication of ascii char
+
+Makes a key from the result of both above 
+
+Definition at line 96 of file utils.\-c.
+
+\hypertarget{utils_8c_a9e4d8cb085fc7d5c9093ee102fa886d1}{\index{utils.\-c@{utils.\-c}!logger@{logger}}
+\index{logger@{logger}!utils.c@{utils.\-c}}
+\subsubsection[{logger}]{\setlength{\rightskip}{0pt plus 5cm}void logger (
+\begin{DoxyParamCaption}
+\item[{F\-I\-L\-E $\ast$}]{file, }
+\item[{char $\ast$}]{message}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_a9e4d8cb085fc7d5c9093ee102fa886d1}
+
+
+Generates a log message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & The output stream \\
+\hline
+{\em message} & Message to log. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1208 of file utils.\-c.
+
+
+
+Referenced by handle\-\_\-command(), and main().
+
+\hypertarget{utils_8c_a2459e03c24825dd78defd1023487af3e}{\index{utils.\-c@{utils.\-c}!process\-\_\-config\-\_\-line@{process\-\_\-config\-\_\-line}}
+\index{process\-\_\-config\-\_\-line@{process\-\_\-config\-\_\-line}!utils.c@{utils.\-c}}
+\subsubsection[{process\-\_\-config\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}int process\-\_\-config\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{line, }
+\item[{struct {\bf config\-\_\-params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_a2459e03c24825dd78defd1023487af3e}
+
+
+Read and load configuration parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Line of input read from file. \\
+\hline
+{\em params} & The structure where config parameters are loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 on success, -\/1 otherwise. 
+\end{DoxyReturn}
+Commented lines ignored.
+
+Extract config parameter name and value.
+
+Line wasn't as expected.
+
+Process this line.
+
+if duplicate table name already exists
+
+if duplicate column name already exists
+
+if duplicate column name already exists
+
+else if (strcmp(name, \char`\"{}data\-\_\-directory\char`\"{}) == 0) \{ strncpy(params-\/$>$data\-\_\-directory, value, sizeof params-\/$>$data\-\_\-directory); \}
+
+Ignore unknown config parameters. 
+
+Definition at line 623 of file utils.\-c.
+
+
+
+References config\-\_\-params\-::concurrency, M\-A\-X\-\_\-\-C\-O\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-C\-O\-L\-U\-M\-N\-S\-\_\-\-P\-E\-R\-\_\-\-T\-A\-B\-L\-E, M\-A\-X\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-T\-A\-B\-L\-E\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-T\-A\-B\-L\-E\-S, config\-\_\-params\-::pass\-\_\-, config\-\_\-params\-::server\-\_\-host, config\-\_\-params\-::server\-\_\-port, and config\-\_\-params\-::username.
+
+
+
+Referenced by read\-\_\-config().
+
+\hypertarget{utils_8c_ae72767aec5408fd1ffb7de737c970adb}{\index{utils.\-c@{utils.\-c}!query\-\_\-parsing@{query\-\_\-parsing}}
+\index{query\-\_\-parsing@{query\-\_\-parsing}!utils.c@{utils.\-c}}
+\subsubsection[{query\-\_\-parsing}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ query\-\_\-parsing (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{unparsed\-\_\-, }
+\item[{struct {\bf query\-\_\-params} $\ast$}]{qparams}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_ae72767aec5408fd1ffb7de737c970adb}
+
+
+This is a function that parses the query command from client side to be used in server side. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unparsed\-\_\-} & pointer to the unparsed string \\
+\hline
+{\em \hyperlink{structquery__params}{query\-\_\-params}} & $\ast$qparams pointer to the struct where query parameters are stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the parsed string 
+\end{DoxyReturn}
+First predicate parsing ends here
+
+Next predicates parsing start here
+
+predicate parsing ends here
+
+Next predicates parsing end here
+
+Putting it together in a string 
+
+Definition at line 1238 of file utils.\-c.
+
+
+
+References M\-A\-X\-\_\-\-C\-O\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-C\-O\-L\-U\-M\-N\-S\-\_\-\-P\-E\-R\-\_\-\-T\-A\-B\-L\-E, and M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-\_\-\-L\-E\-N.
+
+
+
+Referenced by handle\-\_\-command().
+
+\hypertarget{utils_8c_ae885a5871d260ab51ce6a9156f41f07e}{\index{utils.\-c@{utils.\-c}!read\-\_\-config@{read\-\_\-config}}
+\index{read\-\_\-config@{read\-\_\-config}!utils.c@{utils.\-c}}
+\subsubsection[{read\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}int read\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{config\-\_\-file, }
+\item[{struct {\bf config\-\_\-params} $\ast$}]{params}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_ae885a5871d260ab51ce6a9156f41f07e}
+
+
+Read and load configuration parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config\-\_\-file} & The name of the configuration file. \\
+\hline
+{\em params} & The structure where config parameters are loaded. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 on success, -\/1 otherwise. 
+\end{DoxyReturn}
+Open file for reading.
+
+Process the config file.
+
+Read a line from the file.
+
+right size, proceed to process line
+
+not the right size 
+
+Definition at line 1093 of file utils.\-c.
+
+
+
+References config\-\_\-params\-::concurrency, E\-R\-R\-\_\-\-U\-N\-K\-N\-O\-W\-N, M\-A\-X\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-L\-I\-N\-E\-\_\-\-L\-E\-N, config\-\_\-params\-::pass\-\_\-, process\-\_\-config\-\_\-line(), config\-\_\-params\-::server\-\_\-host, config\-\_\-params\-::server\-\_\-port, and config\-\_\-params\-::username.
+
+
+
+Referenced by main().
+
+\hypertarget{utils_8c_ab126c8228ad72abbaed5f282709446ab}{\index{utils.\-c@{utils.\-c}!recvline@{recvline}}
+\index{recvline@{recvline}!utils.c@{utils.\-c}}
+\subsubsection[{recvline}]{\setlength{\rightskip}{0pt plus 5cm}int recvline (
+\begin{DoxyParamCaption}
+\item[{const int}]{sock, }
+\item[{char $\ast$}]{buf, }
+\item[{const size\-\_\-t}]{buflen}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_ab126c8228ad72abbaed5f282709446ab}
+
+
+Reads the stream one byte at a time. 
+
+Receive an entire line from a socket.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & Connection socket \\
+\hline
+{\em buf} & String buffer \\
+\hline
+{\em buflen} & Length of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 on success, -\/1 otherwise. In order to avoid reading more than a line from the stream, this function only reads one byte at a time. This is very inefficient, and you are free to optimize it or implement your own function. 
+\end{DoxyReturn}
+Return status.
+
+Read one byte from scoket.
+
+recv() was not successful, so stop.
+
+Found end of line, so stop.
+
+Keep going.
+
+add null terminator in case it's not already there. 
+
+Definition at line 588 of file utils.\-c.
+
+
+
+Referenced by main(), storage\-\_\-auth(), storage\-\_\-get(), storage\-\_\-query(), and storage\-\_\-set().
+
+\hypertarget{utils_8c_a73c4a410d877b6a9358c547786f2102c}{\index{utils.\-c@{utils.\-c}!sendall@{sendall}}
+\index{sendall@{sendall}!utils.c@{utils.\-c}}
+\subsubsection[{sendall}]{\setlength{\rightskip}{0pt plus 5cm}int sendall (
+\begin{DoxyParamCaption}
+\item[{const int}]{sock, }
+\item[{const char $\ast$}]{buf, }
+\item[{const size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_a73c4a410d877b6a9358c547786f2102c}
+
+
+Keep sending the contents of the buffer until complete. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sock} & Connection socket \\
+\hline
+{\em buf} & String buffer \\
+\hline
+{\em len} & Length of buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return 0 on success, -\/1 otherwise.
+\end{DoxyReturn}
+The parameters mimic the send() function. send() was not successful, so stop. 
+
+Definition at line 563 of file utils.\-c.
+
+
+
+Referenced by handle\-\_\-command(), storage\-\_\-auth(), storage\-\_\-get(), storage\-\_\-query(), and storage\-\_\-set().
+
+\hypertarget{utils_8c_a5d19afa9c6e8c64f2bf0e0c61e4e5e34}{\index{utils.\-c@{utils.\-c}!set\-\_\-parsing@{set\-\_\-parsing}}
+\index{set\-\_\-parsing@{set\-\_\-parsing}!utils.c@{utils.\-c}}
+\subsubsection[{set\-\_\-parsing}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ set\-\_\-parsing (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{unparsed\-\_\-, }
+\item[{struct {\bf set\-\_\-params} $\ast$}]{sparams}
+\end{DoxyParamCaption}
+)}}\label{utils_8c_a5d19afa9c6e8c64f2bf0e0c61e4e5e34}
+
+
+This is a function that parses the set command from client side to be used in server side. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em unparsed\-\_\-} & pointer to the unparsed string \\
+\hline
+{\em \hyperlink{structset__params}{set\-\_\-params}} & $\ast$sparams pointer to the struct where set parameters are stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the parsed string 
+\end{DoxyReturn}
+First predicate parsing ends here
+
+Next predicates parsing start here
+
+predicate parsing ends here
+
+Next predicates parsing end here
+
+Putting it together in a string 
+
+Definition at line 1540 of file utils.\-c.
+
+
+
+References M\-A\-X\-\_\-\-C\-O\-L\-N\-A\-M\-E\-\_\-\-L\-E\-N, M\-A\-X\-\_\-\-C\-O\-L\-U\-M\-N\-S\-\_\-\-P\-E\-R\-\_\-\-T\-A\-B\-L\-E, and M\-A\-X\-\_\-\-V\-A\-L\-U\-E\-\_\-\-L\-E\-N.
+
+
+
+Referenced by handle\-\_\-command().
+

@@ -1,0 +1,8 @@
+Running suite set
+main.c:237:E:set:test_set_1:0: (after this point) Test timeout expired
+main.c:251:E:set:test_set_2:0: (after this point) Test timeout expired
+main.c:266:E:set:test_set_3:0: (after this point) Test timeout expired
+main.c:281:E:set:test_set_4:0: (after this point) Test timeout expired
+main.c:296:E:set:test_set_5:0: (after this point) Test timeout expired
+Results for all suites run:
+0%: Checks: 5, Failures: 0, Errors: 5

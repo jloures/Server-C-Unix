@@ -1,0 +1,88 @@
+Makefile:41: warning: overriding commands for target `createkeys'
+../Makefile.common:33: warning: ignoring old commands for target `createkeys'
+make: Warning: File `../Makefile.common' has modification time 0.031 s in the future
+ln -sf ../../src/server
+ln -s ../../src/storage.h
+make createquerystub
+make[1]: Entering directory `/nfs/ug/homes-0/a/aunghtut/ece297/autotest/a4/build/storage-asst4/mark/a4-test'
+Makefile:41: warning: overriding commands for target `createkeys'
+../Makefile.common:33: warning: ignoring old commands for target `createkeys'
+echo "" > querystub.c
+make[1]: Leaving directory `/nfs/ug/homes-0/a/aunghtut/ece297/autotest/a4/build/storage-asst4/mark/a4-test'
+cc -g -Wall -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I ../../src main.c ../../src/libstorage.a /usr/lib/libcheck.a /usr/lib/x86_64-linux-gnu/libcrypt.so /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libglib-2.0.so querystub.c /usr/lib/x86_64-linux-gnu/libm.so -o main
+main.c: In function 'test_setup_simple_populate':
+main.c:232:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+main.c: In function 'test_setup_complex_populate':
+main.c:285:13: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+for conf in `ls *.conf`; do sed -i -e "1,/server_port/s/server_port.*/server_port 6002/" "$conf"; done
+env CK_VERBOSITY=verbose ./main 6002
+Using server port: 6002.
+Running suite(s): a4-test
+
+>Invalid Parameter was entered. Error code: 1
+
+
+>Invalid Parameter was entered. Error code: 1
+
+
+>Failure to get value. Table not Found! Error code: 5.
+
+
+>Invalid Parameter was entered. Error code: 1
+
+
+>Invalid Parameter was entered. Error code: 1
+
+
+>Invalid Parameter was entered. Error code: 1
+
+
+>Failure to set value 'col 22'. Table not Found! Error code: 5.
+
+
+>Failure to get value. Key not Found! Error code: 6.
+
+
+>Failure to get value. Key not Found! Error code: 6.
+
+
+>Failure to get value. Key not Found! Error code: 6.
+
+
+>Failed to set value. Error code: 8.
+
+
+>Failure Connect. Error code: 2.
+
+
+>Failure Connect. Error code: 2.
+
+
+>Failure Connect. Error code: 2.
+
+100%: Checks: 24, Failures: 0, Errors: 0
+main.c:342:P:sanity:test_sanity_filemod:0: Passed
+main.c:357:P:configerror:test_configerror_nocomma:0: Passed
+main.c:364:P:configerror:test_configerror_negsize:0: Passed
+main.c:382:P:config:test_config_onetable:0: Passed
+main.c:404:P:conn:test_conn_basic:0: Passed
+main.c:413:P:conninvalid:test_conninvalid_connectinvalidparam:0: Passed
+main.c:434:P:getinvalid:test_getinvalid_badtable:0: Passed
+main.c:445:P:getmissing:test_getmissing_missingtable:0: Passed
+main.c:464:P:setinvalid:test_setinvalid_invalidtable:0: Passed
+main.c:479:P:setinvalid:test_setinvalid_badkey:0: Passed
+main.c:502:P:setinvalidcomplex:test_setinvalidcomplex_missingcolumn:0: Passed
+main.c:491:P:setmissing:test_setmissing_missingtable:0: Passed
+main.c:531:P:setget:test_setget_posint:0: Passed
+main.c:549:P:query:test_query_int0:0: Passed
+main.c:566:P:query:test_query_int1:0: Passed
+main.c:622:P:set:test_set_deleteint:0: Passed
+main.c:638:P:set:test_set_deletestr:0: Passed
+main.c:683:P:setcomplex:test_setcomplex_deletethreecols:0: Passed
+main.c:710:P:setcomplex:test_setcomplex_updatethreecols:0: Passed
+main.c:747:P:transaction:test_transaction_pass1:0: Passed
+main.c:786:P:transaction:test_transaction_fail1:0: Passed
+main.c:841:P:concurrency:test_concurrency_get:0: Passed
+main.c:895:P:concurrency:test_concurrency_setget:0: Passed
+main.c:940:P:concurrency:test_concurrency_txpass:0: Passed
+make: warning:  Clock skew detected.  Your build may be incomplete.
